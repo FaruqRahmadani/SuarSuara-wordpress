@@ -32,7 +32,8 @@ gulp.task('watch', ['sass', 'js'], function() {
   gulp.watch("assets/js/**/*.js", ['js']);
   gulp.watch("css/**/*.css").on('change', browserSync.reload);
   gulp.watch("js/**/*.js").on('change', browserSync.reload);
-  gulp.watch("*.{html, php}").on('change', browserSync.reload);
+  gulp.watch("*.php").on('change', browserSync.reload);
+  gulp.watch("*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);
