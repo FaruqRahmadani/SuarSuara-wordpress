@@ -1,0 +1,31 @@
+{
+  "name": "suarsuara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaruqRahmadani/SuarSuara-wordpress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaruqRahmadani/SuarSuara-wordpress/issues"
+  },
+  "homepage": "https://github.com/FaruqRahmadani/SuarSuara-wordpress#readme",
+  "dependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "browser-sync": "^2.26.3",
+    "compass-mixins": "^0.12.10",
+    "extend": "^3.0.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "webpack-stream": "^5.2.1"
+  }
+}
