@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div id="nav-frame">
+<div id="nav-frame" <?php if (is_admin_bar_showing()) echo "style='top: 32px'" ?>>
   <div class="uk-container">
     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
       <div class="uk-navbar-left">
