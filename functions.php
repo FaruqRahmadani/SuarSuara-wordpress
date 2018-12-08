@@ -70,3 +70,8 @@ add_action('admin_init', function(){
     echo '<input type="url" name="url_youtube" id="url_youtube" value="'.get_option('url_youtube').'" class="regular-text">';
   };
 });
+
+function get_img($filename, $dir=null){
+  if ($dir) $dir = $dir.'/';
+  echo get_template_directory_uri()."/img/{$dir}{$filename}";
+}

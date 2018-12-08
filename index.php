@@ -3,7 +3,7 @@
   <div class="uk-container">
     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
       <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo uk-padding-remove" href="#"><img src="<?= get_template_directory_uri()."/img/logo.png" ?>" alt="suarsuara"></a>
+        <a class="uk-navbar-item uk-logo uk-padding-remove" href="#"><img src="<?= get_img('logo.png') ?>" alt="suarsuara"></a>
       </div>
       <div class="uk-navbar-right">
         <div class="main-menu">

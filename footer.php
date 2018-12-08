@@ -4,10 +4,10 @@
     <div class="uk-container uk-text-center">
       <h2 class="uk-text-center">CONNECT WITH US</h2>
       <ul class="uk-padding-remove">
-        <a class="socmed-bottom" href="<?= get_option('url_fb') ?>"><img data-src="<?= get_template_directory_uri()."/img/socmed/fb.svg" ?>" alt="facebook" uk-img></a>
-        <a class="socmed-bottom" href="<?= get_option('url_twitter') ?>"><img data-src="<?= get_template_directory_uri()."/img/socmed/tw.svg" ?>" alt="facebook" uk-img></a>
-        <a class="socmed-bottom" href="<?= get_option('url_ig') ?>"><img data-src="<?= get_template_directory_uri()."/img/socmed/ig.svg" ?>" alt="facebook" uk-img></a>
-        <a class="socmed-bottom" href="<?= get_option('url_youtube') ?>"><img data-src="<?= get_template_directory_uri()."/img/socmed/yt.svg" ?>" alt="facebook" uk-img></a>
+        <a class="socmed-bottom" href="<?= get_option('url_fb') ?>"><img data-src="<?= get_img('fb.svg', 'socmed') ?>" alt="facebook" uk-img></a>
+        <a class="socmed-bottom" href="<?= get_option('url_twitter') ?>"><img data-src="<?= get_img('tw.svg', 'socmed') ?>" alt="facebook" uk-img></a>
+        <a class="socmed-bottom" href="<?= get_option('url_ig') ?>"><img data-src="<?= get_img('ig.svg', 'socmed') ?>" alt="facebook" uk-img></a>
+        <a class="socmed-bottom" href="<?= get_option('url_youtube') ?>"><img data-src="<?= get_img('yt.svg', 'socmed') ?>" alt="facebook" uk-img></a>
       </ul>
 
     </div>
