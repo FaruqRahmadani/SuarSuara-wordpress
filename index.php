@@ -109,7 +109,7 @@
 
         <div class="videowrapper">
           <iframe width="auto" height="100%" allowfullscreen
-          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1" class="video">
+          src="<?= get_option('url_highlight_youtube') ?>" class="video">
         </iframe>
       </div>
       <div class="widget">
