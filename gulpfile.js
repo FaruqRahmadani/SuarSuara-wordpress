@@ -28,8 +28,8 @@ gulp.task('watch', ['sass', 'js'], function() {
   browserSync.init({
     proxy: 'localhost/suarsuara-wordpress'
   });
-  gulp.watch("assets/sccss/**/*.scss", ['sass']);
-  gulp.watch("assets/js/**/*.js", ['js']);
+  gulp.watch("assets/sccss/*.scss", ['sass']);
+  gulp.watch("assets/js/*.js", ['js']);
   gulp.watch("css/**/*.css").on('change', browserSync.reload);
   gulp.watch("js/**/*.js").on('change', browserSync.reload);
   gulp.watch("*.php").on('change', browserSync.reload);

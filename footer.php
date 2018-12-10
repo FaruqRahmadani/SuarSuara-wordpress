@@ -9,7 +9,15 @@
         <a class="socmed-bottom" href="<?= get_option('url_ig') ?>"><img data-src="<?= get_img('ig.svg', 'socmed') ?>" alt="facebook" uk-img></a>
         <a class="socmed-bottom" href="<?= get_option('url_youtube') ?>"><img data-src="<?= get_img('yt.svg', 'socmed') ?>" alt="facebook" uk-img></a>
       </ul>
-
+      <h2 class="uk-text-center">SUPPORT BY :</h2>
+      <ul id=support>
+        <li><img src="<?= get_img('sembilan.png', 'support') ?>" alt="Sembilan"></li>
+        <li><img src="<?= get_img('vistud.png', 'support') ?>" alt="Vision Studio"></li>
+        <li><img src="<?= get_img('rollingstone.png', 'support') ?>" alt="Rolling Stone"></li>
+        <li><img src="<?= get_img('youtube.png', 'support') ?>" alt="Youtube"></li>
+        <li><img src="<?= get_img('fb.png', 'support') ?>" alt="Facebook"></li>
+        <li><img src="<?= get_img('twitter.png', 'support') ?>" alt="Twitter"></li>
+      </ul>
     </div>
   </section>
   <section class="footer-bottom">

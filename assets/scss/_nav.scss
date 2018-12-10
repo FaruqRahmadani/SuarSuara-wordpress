@@ -1,6 +1,5 @@
 #menuresv li {
 	padding: 15px 0 !important;
-
 }
 
 .menu-l {
@@ -11,7 +10,6 @@
 	float: right !important;
 }
 
-
 .uk-navbar-toggle {
     min-height: 50px !important;
     float: right;
@@ -19,19 +17,13 @@
 
 #nav-frame {
 	background:#222222;
+	box-shadow:#a6a6a6 0px 1px 3px 0px;
 	border-bottom: solid $color-yellow 6px;
 	position: fixed;
     z-index: 1;
     border-bottom: solid #ecc640 6px;
     width: 100%;
     top: 0px
-}
-
-h2.top-title {
-	font-size: 2em !important;
-	font-family: 'Architects Daughter', cursive !important;
-	color:#fff;
-	margin: 0;
 }
 
 .socmed-top {
@@ -47,6 +39,7 @@ h2.top-title {
 
 .uk-navbar-nav {
 	a {
+		@include transition-duration(.5s);
 		font-weight: 400 !important;
 		min-height: 60px !important;
 		letter-spacing: 1px;
@@ -54,11 +47,11 @@ h2.top-title {
 		color:$color-yellow !important;
 
 		&:hover {
+			@include transition-duration(.5s);
 			background:$color-yellow;
 			color:#fff !important;
 		}
 	}
-
 }
 
 .uk-navbar-dropdown {
@@ -79,6 +72,3 @@ h2.top-title {
 	}
 }
 
-.uk-navbar-dropdown-bottom {
-	// margin-top: 0 !important;
-}
