@@ -4,6 +4,12 @@ function load_theme(){
   wp_enqueue_script( 'app', get_template_directory_uri().'/js/app.js');
 }
 add_action( 'wp_enqueue_scripts', 'load_theme' );
+add_theme_support( 'post-thumbnails' );
+
+function get_img($filename, $dir=null){
+  if ($dir) $dir = $dir.'/';
+  echo get_template_directory_uri()."/img/{$dir}{$filename}";
+}
 
 if (is_admin()) {
   add_action('admin_init', function(){
@@ -31,9 +37,4 @@ if (is_admin()) {
       );
     }
   });
-}
-
-function get_img($filename, $dir=null){
-  if ($dir) $dir = $dir.'/';
-  echo get_template_directory_uri()."/img/{$dir}{$filename}";
 }
