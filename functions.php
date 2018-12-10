@@ -49,6 +49,8 @@ function slider_post_init() {
     'rewrite' => array('slug' => 'slider'),
     'query_var' => true,
     'menu_icon' => 'dashicons-slides',
+    'menu_position' => 5,
+    'show_in_menu' => 'custom-post',
     'supports' => array(
       'title',
       'thumbnail',
@@ -59,3 +61,9 @@ function slider_post_init() {
   register_post_type( 'slider', $args );
 }
 add_action( 'init', 'slider_post_init' );
+
+add_action( 'admin_menu', 'custom_post_menu' );
+
+function custom_post_menu() {
+	add_menu_page( 'Custom Post', 'Custom Post', 'manage_options', 'custom-post', 'custom_post_page', 'dashicons-welcome-write-blog', 5  );
+}
