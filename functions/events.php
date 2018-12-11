@@ -72,10 +72,12 @@ function wpt_events_time() {
 
 function wpt_save_events_meta( $post_id, $post ) {
   if ( ! current_user_can( 'edit_post', $post_id ) ) return $post_id;
-  if ($post->post_type === 'events') wp_set_object_terms( $post_id, 'Event', 'category', true );
-  $events_meta['event_location'] = esc_textarea( $_POST['event_location'] );
-  $events_meta['event_date'] = esc_textarea( $_POST['event_date'] );
-  $events_meta['event_time'] = esc_textarea( $_POST['event_time'] );
+  if ($post->post_type === 'events') {
+    wp_set_object_terms( $post_id, 'Event', 'category', true );
+    $events_meta['event_location'] = esc_textarea( $_POST['event_location'] );
+    $events_meta['event_date'] = esc_textarea( $_POST['event_date'] );
+    $events_meta['event_time'] = esc_textarea( $_POST['event_time'] );
+  }
   foreach ( $events_meta as $key => $value ) :
     if ( 'revision' === $post->post_type ) return;
     if ( get_post_meta( $post_id, $key, false ) ) update_post_meta( $post_id, $key, $value );
