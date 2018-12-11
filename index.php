@@ -5,9 +5,13 @@
       <?php
         $query = new WP_Query( array('post_type' => 'slider') );
         while ( $query->have_posts() ) : $query->the_post();
+          if (has_post_thumbnail()):
       ?>
         <li><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" alt="image" uk-cover></li>
-      <?php endwhile ?>
+      <?php
+          endif;
+        endwhile;
+      ?>
     </ul>
     <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
     <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
