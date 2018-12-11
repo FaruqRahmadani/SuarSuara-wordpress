@@ -97,11 +97,14 @@
       <div class="widget">
         <h1 class="main-title">CATEGORY</h1>
         <ul class="uk-list">
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
+          <?php
+          $categories = get_categories();
+          foreach($categories as $category) {
+            ?>
+            <li><a class="category" href="#"><?= $category->name ?></a></li>
+            <?php
+          }
+          ?>
         </ul>
       </div>
       <div class="widget">
