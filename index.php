@@ -111,7 +111,7 @@
         <h1 class="main-title">EVENTS</h1>
         <section id="events">
           <?php
-            $query = new WP_Query( array('post_type' => 'events') );
+            $query = new WP_Query( array('post_type' => 'events', 'posts_per_page' => 5) );
             while ( $query->have_posts() ) : $query->the_post();
             $postId = get_the_ID();
           ?>
