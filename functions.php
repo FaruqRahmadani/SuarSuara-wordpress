@@ -62,6 +62,8 @@ function slider_post_init() {
 }
 add_action( 'init', 'slider_post_init' );
 
+include('functions/events.php');
+
 add_action( 'admin_menu', 'custom_post_menu' );
 
 function custom_post_menu() {
