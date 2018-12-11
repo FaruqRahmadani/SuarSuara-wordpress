@@ -1,7 +1,12 @@
 <?php
 function slider_post_init() {
   $args = array(
-    'label' => 'Slider',
+    'labels' => array(
+      'name' => 'Slider',
+      'featured_image' => 'Slider Image',
+      'set_featured_image' => 'Add Image',
+      'remove_featured_image' => 'Remove Image',
+    ),
     'public' => true,
     'show_ui' => true,
     'capability_type' => 'post',

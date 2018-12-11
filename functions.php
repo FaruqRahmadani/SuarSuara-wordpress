@@ -21,7 +21,7 @@ if (is_admin()) {
       ['id' => 'url_highlight_youtube', 'title' => 'URL Highlight Youtube']
     ];
 
-    foreach ($settingsOption as $data) {
+    foreach ($settingsOption as $data) :
       add_settings_field(
         $data['id'],
         $data['title'],
@@ -35,7 +35,7 @@ if (is_admin()) {
         'general',
         $data['id']
       );
-    }
+    endforeach;
   });
 }
 
@@ -43,7 +43,6 @@ include('functions/slider.php');
 include('functions/events.php');
 
 add_action( 'admin_menu', 'custom_post_menu' );
-
 function custom_post_menu() {
 	add_menu_page( 'Custom Post', 'Custom Post', 'manage_options', 'custom-post', 'custom_post_page', 'dashicons-welcome-write-blog', 5  );
 }
