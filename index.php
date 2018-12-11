@@ -107,8 +107,12 @@
       <div class="widget">
         <h1 class="main-title">EVENTS</h1>
         <section id="events">
+          <?php
+            $query = new WP_Query( array('post_type' => 'events') );
+            while ( $query->have_posts() ) : $query->the_post();
+          ?>
           <div class="list-events">
-            <h4><a href="#">Lorem ipsum dolor sit amet</a></h4>
+            <h4><a href="#"><?= the_title() ?></a></h4>
             <ul class="uk-list uk-margin-remove-vertical">
               <li>
                 <span uk-icon="icon:calendar; ratio:.8"></span>
@@ -122,51 +126,9 @@
               </li>
             </ul>
           </div>
-          <div class="list-events">
-            <h4><a href="#">consectetur adipisicing elit</a></h4>
-            <ul class="uk-list uk-margin-remove-vertical">
-              <li>
-                <span uk-icon="icon:calendar; ratio:.8"></span>
-                <span class="uk-text-middle uk-margin-small-right">10 Oktober 2018</span>
-                <span uk-icon="icon:clock; ratio:.8"></span>
-                <span class="uk-text-middle">15:00 - Finish</span>
-              </li>
-              <li>
-                <span uk-icon="icon:location; ratio:.8"></span>
-                <span class="uk-text-middle">Halaman Rattan Inn</span>
-              </li>
-            </ul>
-          </div>
-          <div class="list-events">
-            <h4><a href="#">Quam dolores atque ratione sit nesciunt</a></h4>
-            <ul class="uk-list uk-margin-remove-vertical">
-              <li>
-                <span uk-icon="icon:calendar; ratio:.8"></span>
-                <span class="uk-text-middle uk-margin-small-right">10 Oktober 2018</span>
-                <span uk-icon="icon:clock; ratio:.8"></span>
-                <span class="uk-text-middle">15:00 - Finish</span>
-              </li>
-              <li>
-                <span uk-icon="icon:location; ratio:.8"></span>
-                <span class="uk-text-middle">Halaman Rattan Inn</span>
-              </li>
-            </ul>
-          </div>
-          <div class="list-events">
-            <h4><a href="#">Quam dolores atque ratione sit nesciunt</a></h4>
-            <ul class="uk-list uk-margin-remove-vertical">
-              <li>
-                <span uk-icon="icon:calendar; ratio:.8"></span>
-                <span class="uk-text-middle uk-margin-small-right">10 Oktober 2018</span>
-                <span uk-icon="icon:clock; ratio:.8"></span>
-                <span class="uk-text-middle">15:00 - Finish</span>
-              </li>
-              <li>
-                <span uk-icon="icon:location; ratio:.8"></span>
-                <span class="uk-text-middle">Halaman Rattan Inn</span>
-              </li>
-            </ul>
-          </div>
+          <?php
+            endwhile;
+          ?>
         </section>
       </div>
     </div>
