@@ -29,7 +29,7 @@ function add_events_metaboxes() {
     'Tanggal Event',
     'wpt_events_date',
     'events',
-    'side',
+    'normal',
     'default'
   );
   add_meta_box(
@@ -37,7 +37,7 @@ function add_events_metaboxes() {
     'Waktu Event',
     'wpt_events_time',
     'events',
-    'side',
+    'normal',
     'default'
   );
   add_meta_box(
@@ -45,7 +45,7 @@ function add_events_metaboxes() {
     'Lokasi Event',
     'wpt_events_location',
     'events',
-    'side',
+    'normal',
     'default'
   );
 }
