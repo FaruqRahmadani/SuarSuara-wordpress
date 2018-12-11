@@ -31,7 +31,15 @@ function add_events_metaboxes() {
 		'side',
 		'default'
 	);
-	add_meta_box(
+  add_meta_box(
+		'wpt_events_time',
+		'Waktu Event',
+		'wpt_events_time',
+		'events',
+		'side',
+		'default'
+	);
+  add_meta_box(
 		'wpt_events_location',
 		'Lokasi Event',
 		'wpt_events_location',
@@ -54,12 +62,19 @@ function wpt_events_date() {
 	$date = get_post_meta( $post->ID, 'date', true );
 	echo '<input type="text" name="date" value="' . esc_textarea( $date )  . '" class="widefat">';
 }
+function wpt_events_time() {
+	global $post;
+	wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+	$time = get_post_meta( $post->ID, 'time', true );
+	echo '<input type="text" name="time" value="' . esc_textarea( $time )  . '" class="widefat">';
+}
 
 function wpt_save_events_meta( $post_id, $post ) {
 	if ( ! current_user_can( 'edit_post', $post_id ) ) return $post_id;
 	if ( ! isset( $_POST['location'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) return $post_id;
   $events_meta['location'] = esc_textarea( $_POST['location'] );
-	$events_meta['date'] = esc_textarea( $_POST['date'] );
+  $events_meta['date'] = esc_textarea( $_POST['date'] );
+	$events_meta['time'] = esc_textarea( $_POST['time'] );
 	foreach ( $events_meta as $key => $value ) :
 		if ( 'revision' === $post->post_type ) return;
 		if ( get_post_meta( $post_id, $key, false ) ) update_post_meta( $post_id, $key, $value );
