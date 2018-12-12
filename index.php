@@ -97,76 +97,42 @@
       <div class="widget">
         <h1 class="main-title">CATEGORY</h1>
         <ul class="uk-list">
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
-          <li><a class="category" href="#">CATEGORY</a></li>
+          <?php
+          $categories = get_categories();
+          foreach($categories as $category) {
+            ?>
+            <li><a class="category" href="#"><?= $category->name ?></a></li>
+            <?php
+          }
+          ?>
         </ul>
       </div>
       <div class="widget">
         <h1 class="main-title">EVENTS</h1>
         <section id="events">
+          <?php
+            $query = new WP_Query( array('post_type' => 'events', 'posts_per_page' => 5) );
+            while ( $query->have_posts() ) : $query->the_post();
+            $postId = get_the_ID();
+          ?>
           <div class="list-events">
-            <h4><a href="#">Lorem ipsum dolor sit amet</a></h4>
+            <h4><a href="<?= get_the_permalink() ?>"><?= the_title() ?></a></h4>
             <ul class="uk-list uk-margin-remove-vertical">
               <li>
                 <span uk-icon="icon:calendar; ratio:.8"></span>
-                <span class="uk-text-middle uk-margin-small-right">10 Oktober 2018</span>
+                <span class="uk-text-middle uk-margin-small-right"><?= get_post_meta($postId, 'event_date', true) ?></span>
                 <span uk-icon="icon:clock; ratio:.8"></span>
-                <span class="uk-text-middle">15:00 - Finish</span>
+                <span class="uk-text-middle"><?= get_post_meta($postId, 'event_time', true) ?></span>
               </li>
               <li>
                 <span uk-icon="icon:location; ratio:.8"></span>
-                <span class="uk-text-middle">Halaman Rattan Inn</span>
+                <span class="uk-text-middle"><?= get_post_meta($postId, 'event_location', true) ?></span>
               </li>
             </ul>
           </div>
-          <div class="list-events">
-            <h4><a href="#">consectetur adipisicing elit</a></h4>
-            <ul class="uk-list uk-margin-remove-vertical">
-              <li>
-                <span uk-icon="icon:calendar; ratio:.8"></span>
-                <span class="uk-text-middle uk-margin-small-right">10 Oktober 2018</span>
-                <span uk-icon="icon:clock; ratio:.8"></span>
-                <span class="uk-text-middle">15:00 - Finish</span>
-              </li>
-              <li>
-                <span uk-icon="icon:location; ratio:.8"></span>
-                <span class="uk-text-middle">Halaman Rattan Inn</span>
-              </li>
-            </ul>
-          </div>
-          <div class="list-events">
-            <h4><a href="#">Quam dolores atque ratione sit nesciunt</a></h4>
-            <ul class="uk-list uk-margin-remove-vertical">
-              <li>
-                <span uk-icon="icon:calendar; ratio:.8"></span>
-                <span class="uk-text-middle uk-margin-small-right">10 Oktober 2018</span>
-                <span uk-icon="icon:clock; ratio:.8"></span>
-                <span class="uk-text-middle">15:00 - Finish</span>
-              </li>
-              <li>
-                <span uk-icon="icon:location; ratio:.8"></span>
-                <span class="uk-text-middle">Halaman Rattan Inn</span>
-              </li>
-            </ul>
-          </div>
-          <div class="list-events">
-            <h4><a href="#">Quam dolores atque ratione sit nesciunt</a></h4>
-            <ul class="uk-list uk-margin-remove-vertical">
-              <li>
-                <span uk-icon="icon:calendar; ratio:.8"></span>
-                <span class="uk-text-middle uk-margin-small-right">10 Oktober 2018</span>
-                <span uk-icon="icon:clock; ratio:.8"></span>
-                <span class="uk-text-middle">15:00 - Finish</span>
-              </li>
-              <li>
-                <span uk-icon="icon:location; ratio:.8"></span>
-                <span class="uk-text-middle">Halaman Rattan Inn</span>
-              </li>
-            </ul>
-          </div>
+          <?php
+            endwhile;
+          ?>
         </section>
       </div>
     </div>

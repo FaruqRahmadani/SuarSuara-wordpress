@@ -21,7 +21,7 @@ if (is_admin()) {
       ['id' => 'url_highlight_youtube', 'title' => 'URL Highlight Youtube']
     ];
 
-    foreach ($settingsOption as $data) {
+    foreach ($settingsOption as $data) :
       add_settings_field(
         $data['id'],
         $data['title'],
@@ -35,35 +35,33 @@ if (is_admin()) {
         'general',
         $data['id']
       );
-    }
+    endforeach;
   });
 }
 
-function slider_post_init() {
-  $args = array(
-    'label' => 'Slider',
-    'public' => true,
-    'show_ui' => true,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'rewrite' => array('slug' => 'slider'),
-    'query_var' => true,
-    'menu_icon' => 'dashicons-slides',
-    'menu_position' => 5,
-    'show_in_menu' => 'custom-post',
-    'supports' => array(
-      'title',
-      'thumbnail',
-      'author',
-      'page-attributes',
-    )
-  );
-  register_post_type( 'slider', $args );
-}
-add_action( 'init', 'slider_post_init' );
+include('functions/slider.php');
+include('functions/events.php');
 
 add_action( 'admin_menu', 'custom_post_menu' );
-
 function custom_post_menu() {
 	add_menu_page( 'Custom Post', 'Custom Post', 'manage_options', 'custom-post', 'custom_post_page', 'dashicons-welcome-write-blog', 5  );
 }
+
+function wpt_save_meta( $post_id, $post ) {
+  if ( ! current_user_can( 'edit_post', $post_id ) ) return $post_id;
+  if ($post->post_type === 'events') {
+    wp_set_object_terms( $post_id, 'Event', 'category', true );
+    $meta['event_location'] = esc_textarea( $_POST['event_location'] );
+    $meta['event_date'] = esc_textarea( $_POST['event_date'] );
+    $meta['event_time'] = esc_textarea( $_POST['event_time'] );
+  }
+  if ($meta) {
+    foreach ( $meta as $key => $value ) :
+      if ( 'revision' === $post->post_type ) return;
+      if ( get_post_meta( $post_id, $key, false ) ) update_post_meta( $post_id, $key, $value );
+      else add_post_meta( $post_id, $key, $value);
+      if ( ! $value ) delete_post_meta( $post_id, $key );
+    endforeach;
+  }
+}
+add_action( 'save_post', 'wpt_save_meta', 1, 2 );
