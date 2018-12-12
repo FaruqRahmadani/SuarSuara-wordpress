@@ -19,7 +19,7 @@ gulp.task('js', function(){
   var config = extend({}, require('./webpack.config.js'), {
     mode: 'production',
   });
-  return gulp.src("assets/js/*.js")
+  return gulp.src("assets/js/main.js")
   .pipe(webpack(config))
   .pipe(gulp.dest("js"));
 });
