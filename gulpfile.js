@@ -6,7 +6,7 @@ var gulp         = require('gulp'),
     browserSync  = require('browser-sync')
 
 gulp.task('sass', function() {
-  return gulp.src("assets/scss/*.scss")
+  return gulp.src("assets/scss/**/*.scss")
   .pipe(sass({
     outputStyle: 'compressed',
     includePaths: ['node_modules/']
@@ -28,7 +28,7 @@ gulp.task('watch', ['sass', 'js'], function() {
   browserSync.init({
     proxy: 'localhost/suarsuara-wordpress'
   });
-  gulp.watch("assets/sccss/*.scss", ['sass']);
+  gulp.watch("assets/scss/*.scss", ['sass']);
   gulp.watch("assets/js/*.js", ['js']);
   gulp.watch("css/**/*.css").on('change', browserSync.reload);
   gulp.watch("js/**/*.js").on('change', browserSync.reload);
