@@ -65,3 +65,14 @@ function wpt_save_meta( $post_id, $post ) {
   }
 }
 add_action( 'save_post', 'wpt_save_meta', 1, 2 );
+
+function set_excerpt_length(){
+  return 20;
+}
+
+function set_excerpt_text(){
+  return '';
+}
+
+add_filter('excerpt_length', 'set_excerpt_length');
+add_filter('excerpt_more', 'set_excerpt_text');

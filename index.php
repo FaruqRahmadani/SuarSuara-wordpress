@@ -21,71 +21,26 @@
     <div uk-grid>
       <div class="uk-width-2-3@m">
         <h1 class="main-title">NEWS</h1>
+        <?php
+          $query = new WP_Query( array('post_type' => 'any') );
+            while ( $query->have_posts() ) : $query->the_post();
+        ?>
         <article>
           <div class="uk-flex" uk-grid>
-            <div class="uk-width-1-3@m uk-flex-first">
-              <img src="<?= get_template_directory_uri()."/img/light.jpg" ?>" alt="Image">
+            <div class="uk-width-1-3@m uk-flex-first uk-inline">
+              <img src="<?= get_post_thumbnail_id()?wp_get_attachment_url(get_post_thumbnail_id()):get_img('logo.png') ?>" alt="Image" class="uk-position-center">
             </div>
             <div class="uk-width-2-3@m">
-              <h2 class="article-title uk-margin-remove-bottom"><a href="#">Lorem ipsum dolor sit amet</a></h2>
-              <div class="post-date">01 OKTOBER 2018</div>
-              <p class="uk-margin-remove-vertical">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              <a class="read-more" href="#">read more...</a>
+              <h2 class="article-title uk-margin-remove-bottom"><a href="<?= get_the_permalink() ?>"><?= the_title() ?> </a></h2>
+              <div class="post-date"><?= get_the_date() ?></div>
+              <p class="uk-margin-remove-vertical"><?= get_the_excerpt() ?></p>
+              <a class="read-more" href="<?= get_the_permalink() ?>">read more...</a>
             </div>
           </div>
         </article>
-        <article>
-          <div class="uk-flex" uk-grid>
-            <div class="uk-width-1-3@m uk-flex-first">
-              <img src="<?= get_template_directory_uri()."/img/light.jpg" ?>" alt="Image">
-            </div>
-            <div class="uk-width-2-3@m">
-              <h2 class="article-title uk-margin-remove-bottom"><a href="#">Lorem ipsum dolor sit amet</a></h2>
-              <div class="post-date">01 OKTOBER 2018</div>
-              <p class="uk-margin-remove-vertical">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              <a class="read-more" href="#">read more...</a>
-            </div>
-          </div>
-        </article>
-        <article>
-          <div class="uk-flex" uk-grid>
-            <div class="uk-width-1-3@m uk-flex-first">
-              <img src="<?= get_template_directory_uri()."/img/light.jpg" ?>" alt="Image">
-            </div>
-            <div class="uk-width-2-3@m">
-              <h2 class="article-title uk-margin-remove-bottom"><a href="#">sapiente animi dolorem similique delectus dolorum</a></h2>
-              <div class="post-date">01 OKTOBER 2018</div>
-              <p class="uk-margin-remove-vertical">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <a class="read-more" href="#">read more...</a>
-            </div>
-          </div>
-        </article>
-        <article>
-          <div class="uk-flex" uk-grid>
-            <div class="uk-width-1-3@m uk-flex-first">
-              <img src="<?= get_template_directory_uri()."/img/light.jpg" ?>" alt="Image">
-            </div>
-            <div class="uk-width-2-3@m">
-              <h2 class="article-title uk-margin-remove-bottom"><a href="#">sapiente animi dolorem similique delectus dolorum</a></h2>
-              <div class="post-date">01 OKTOBER 2018</div>
-              <p class="uk-margin-remove-vertical">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <a class="read-more" href="#">read more...</a>
-            </div>
-          </div>
-        </article>
-        <article>
-          <div class="uk-flex" uk-grid>
-            <div class="uk-width-1-3@m uk-flex-first">
-              <img src="<?= get_template_directory_uri()."/img/light.jpg" ?>" alt="Image">
-            </div>
-            <div class="uk-width-2-3@m">
-              <h2 class="article-title uk-margin-remove-bottom"><a href="#">sapiente animi dolorem similique delectus dolorum</a></h2>
-              <div class="post-date">01 OKTOBER 2018</div>
-              <p class="uk-margin-remove-vertical">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <a class="read-more" href="#">read more...</a>
-            </div>
-          </div>
-        </article>
+        <?php
+          endwhile;
+        ?>
       </div>
       <div class="uk-width-1-3@m">
         <h1 class="main-title">HIGHLIGHT VIDEO</h1>

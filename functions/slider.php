@@ -16,6 +16,7 @@ function slider_post_init() {
     'menu_icon' => 'dashicons-slides',
     'menu_position' => 5,
     'show_in_menu' => 'custom-post',
+    'exclude_from_search' => true,
     'supports' => array(
       'title',
       'thumbnail',
