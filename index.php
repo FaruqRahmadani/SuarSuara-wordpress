@@ -31,7 +31,7 @@
                   <img src="<?= has_post_thumbnail()?wp_get_attachment_url(get_post_thumbnail_id()):get_img('logo.png') ?>" alt="Image" class="uk-position-center">
                 </div>
                 <div class="uk-width-2-3@m">
-                  <h2 class="article-title uk-margin-remove-bottom"><a href="<?= get_the_permalink() ?>"><?= the_title() ?> </a></h2>
+                  <h2 class="article-title uk-margin-remove-bottom"><a href="<?= get_the_permalink() ?>"><?= the_title() ?></a></h2>
                   <div class="post-date"><?= get_the_date() ?></div>
                   <p class="uk-margin-remove-vertical"><?= get_the_excerpt() ?></p>
                   <a class="read-more" href="<?= get_the_permalink() ?>">read more...</a>
