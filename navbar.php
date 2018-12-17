@@ -2,14 +2,14 @@
   <div class="uk-container">
     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
       <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo uk-padding-remove" href="#"><img src="<?= get_img('logo.png') ?>" alt="suarsuara"></a>
+        <a class="uk-navbar-item uk-logo uk-padding-remove" href="<?= get_home_url() ?>"><img src="<?= get_img('logo.png') ?>" alt="suarsuara"></a>
       </div>
       <div class="uk-navbar-right">
         <div class="main-menu">
           <ul class="uk-navbar-nav">
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="<?= get_home_url() ?>">HOME</a></li>
             <li><a href="#">NEWS</a></li>
-            <li><a href="store.html">STORE</a></li>
+            <li><a href="<?= get_category_link(get_cat_ID('Band' )) ?>">STORE</a></li>
             <li><a href="#">ABOUT US</a></li>
             <li><a class="uk-navbar-toggle uk-float-right uk-padding-small" href="#search" uk-search-icon uk-toggle></a></li>
           </ul>

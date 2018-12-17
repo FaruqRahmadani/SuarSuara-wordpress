@@ -41,6 +41,7 @@ if (is_admin()) {
 
 include('functions/slider.php');
 include('functions/events.php');
+include('functions/bands.php');
 
 add_action( 'admin_menu', 'custom_post_menu' );
 function custom_post_menu() {
@@ -55,6 +56,11 @@ function wpt_save_meta( $post_id, $post ) {
     $meta['event_date'] = esc_textarea( $_POST['event_date'] );
     $meta['event_time'] = esc_textarea( $_POST['event_time'] );
   }
+  if ($post->post_type === 'bands') {
+    wp_set_object_terms( $post_id, 'Band', 'category', true );
+    $meta['band_description'] = esc_textarea( $_POST['band_description'] );
+    $meta['band_contact'] = esc_textarea( $_POST['band_contact'] );
+  }
   if ($meta) {
     foreach ( $meta as $key => $value ) :
       if ( 'revision' === $post->post_type ) return;
@@ -65,3 +71,14 @@ function wpt_save_meta( $post_id, $post ) {
   }
 }
 add_action( 'save_post', 'wpt_save_meta', 1, 2 );
+
+function set_excerpt_length(){
+  return 20;
+}
+
+function set_excerpt_text(){
+  return '';
+}
+
+add_filter('excerpt_length', 'set_excerpt_length');
+add_filter('excerpt_more', 'set_excerpt_text');
