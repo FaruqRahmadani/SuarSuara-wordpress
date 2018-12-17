@@ -10,6 +10,9 @@
 @import "resv";
 @import "uikit";
 
+#wpadminbar{
+  position: fixed;  
+}
 
 // font setting
 @font-face {
