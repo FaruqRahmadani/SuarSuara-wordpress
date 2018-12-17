@@ -11,7 +11,7 @@
         $categories = get_categories();
         foreach($categories as $category) :
       ?>
-          <li><a class="category" href="#"><?= $category->name ?></a></li>
+          <li><a class="category" href="<?= get_category_link( $category->term_id ) ?>"><?= $category->name ?></a></li>
       <?php
         endforeach;
       ?>
