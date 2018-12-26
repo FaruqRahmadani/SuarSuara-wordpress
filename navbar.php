@@ -7,10 +7,10 @@
       <div class="uk-navbar-right">
         <div class="main-menu">
           <ul class="uk-navbar-nav">
-            <li><a href="<?= get_home_url() ?>">HOME</a></li>
-            <li><a href="#">NEWS</a></li>
+            <li><a href="<?= get_home_url() ?>">BERANDA</a></li>
+            <li><a href="#">BERITA</a></li>
             <li><a href="<?= get_category_link(get_cat_ID('Band')) ?>">STORE</a></li>
-            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">TENTANG KAMI</a></li>
             <li><a class="uk-navbar-toggle uk-float-right uk-padding-small" href="#search" uk-search-icon uk-toggle></a></li>
           </ul>
         </div>
