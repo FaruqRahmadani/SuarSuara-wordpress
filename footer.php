@@ -32,7 +32,7 @@
 <div id="search" class="uk-modal-full uk-modal" uk-modal>
   <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
     <button class="uk-modal-close-full" type="button" uk-close></button>
-    <form class="uk-search uk-search-large">
+    <form class="uk-search uk-search-large" id="search" action="<?= home_url( '/' ) ?>" method="get">
       <input type="text" name="s" id="search" class="uk-search-input uk-text-center" placeholder="Search..." value="<?php the_search_query(); ?>" />
     </form>
   </div>
