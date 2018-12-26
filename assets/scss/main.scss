@@ -42,7 +42,7 @@
 //   letter-spacing: .5px;
 // }
 
-article p, a.read-more, .brand-info p {
+article p, article span, a.read-more, .brand-info p {
   font-family: "Roboto Condensed" !important;
 }
 
@@ -82,6 +82,7 @@ body { padding-top: 60px;}
 }
 
 a.category {
+  text-transform: uppercase;
 	@include transition-duration(.9s);
 	text-align: center;
 	display: block;
