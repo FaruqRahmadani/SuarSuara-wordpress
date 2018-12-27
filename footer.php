@@ -33,7 +33,7 @@
   <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
     <button class="uk-modal-close-full" type="button" uk-close></button>
     <form class="uk-search uk-search-large" id="search" action="<?= home_url( '/' ) ?>" method="get">
-      <input type="text" name="s" id="search" class="uk-search-input uk-text-center" placeholder="Search..." value="<?php the_search_query(); ?>" />
+      <input type="text" name="s" id="search" class="uk-search-input uk-text-center" placeholder="Cari..." value="<?php the_search_query(); ?>" />
     </form>
   </div>
 </div>
@@ -42,14 +42,14 @@
   <div class="uk-offcanvas-bar">
     <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
     <ul class="uk-list uk-list-divider">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="#">NEWS</a></li>
-      <li><a href="store.html">STORE</a></li>
-      <li><a href="#">ABOUT US</a></li>
+      <li><a href="<?= get_home_url() ?>">BERANDA</a></li>
+      <li><a href="#">BERITA</a></li>
+      <li><a href="<?= get_category_link(get_cat_ID('Band')) ?>">STORE</a></li>
+      <li><a href="#">TENTANG KAMI</a></li>
       <li>
-        <form class="uk-search uk-search-default">
+        <form class="uk-search uk-search-default"  id="search" action="<?= home_url( '/' ) ?>" method="get">
           <a href="" class="uk-search-icon-flip" uk-search-icon></a>
-          <input class="uk-search-input" type="search" placeholder="Search...">
+          <input type="text" name="s" id="search" class="uk-search-input uk-text-center" placeholder="Cari..." value="<?php the_search_query(); ?>" />
         </form>
       </li>
     </ul>

@@ -9,7 +9,7 @@
     <div uk-grid>
       <div class="uk-width-2-3@m">
         <h1 class="main-title">PRODUCT</h1>
-        <article>
+        <article uk-lightbox="animation: scale" class="store-content">
           <h2 class="article-title"><?= the_title() ?></h2>
           <p><?= the_content() ?></p>
         </article>
