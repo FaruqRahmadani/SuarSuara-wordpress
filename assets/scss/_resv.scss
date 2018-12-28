@@ -27,8 +27,8 @@
   }
 
   article {
-    img {
-      display: none;
+    img.thumbnail-post {
+      display: none !important;
     }
   }
 

@@ -2,7 +2,7 @@ article {
 	img {
 		max-width: 100%;
 		height: auto;
-
+		display: block !important;
 	}
 	p {
 		color: $color-light-grey !important;

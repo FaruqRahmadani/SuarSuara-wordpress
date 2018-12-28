@@ -28,7 +28,7 @@
             <article>
               <div class="uk-flex" uk-grid>
                 <div class="uk-width-1-3@m uk-flex-first">
-                  <img src="<?= has_post_thumbnail()?wp_get_attachment_url(get_post_thumbnail_id()):get_img('logo.png') ?>" alt="Image">
+                  <img class="thumbnail-post" src="<?= has_post_thumbnail()?wp_get_attachment_url(get_post_thumbnail_id()):get_img('logo.png') ?>" alt="Image">
                 </div>
                 <div class="uk-width-2-3@m">
                   <h2 class="article-title uk-margin-remove-bottom"><a href="<?= get_the_permalink() ?>"><?= the_title() ?></a></h2>
