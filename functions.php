@@ -18,7 +18,8 @@ if (is_admin()) {
       ['id' => 'url_fb', 'title' => 'URL Facebook Akun'],
       ['id' => 'url_twitter', 'title' => 'URL Twitter Akun'],
       ['id' => 'url_youtube', 'title' => 'URL Youtube Akun'],
-      ['id' => 'url_highlight_youtube', 'title' => 'URL Highlight Youtube']
+      ['id' => 'url_highlight_youtube', 'title' => 'URL Highlight Youtube'],
+      ['id' => 'contact', 'title' => 'Contact']
     ];
 
     foreach ($settingsOption as $data) :

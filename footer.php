@@ -3,35 +3,38 @@
   <section class="footer-top">
     <div class="uk-container uk-text-center">
       <h2 class="uk-text-center">CONNECT WITH US</h2>
-      <ul class="sosmed">
+      <ul class="socmed">
         <li><a class="socmed-bottom" href="<?= get_option('url_fb') ?>"><img data-src="<?= get_img('fb.svg', 'socmed') ?>" alt="facebook" uk-img></a></li>
         <li><a class="socmed-bottom" href="<?= get_option('url_twitter') ?>"><img data-src="<?= get_img('tw.svg', 'socmed') ?>" alt="facebook" uk-img></a></li>
         <li><a class="socmed-bottom" href="<?= get_option('url_ig') ?>"><img data-src="<?= get_img('ig.svg', 'socmed') ?>" alt="facebook" uk-img></a></li>
         <li><a class="socmed-bottom" href="<?= get_option('url_youtube') ?>"><img data-src="<?= get_img('yt.svg', 'socmed') ?>" alt="facebook" uk-img></a></li>
       </ul>
+      <div class="contact">
+        <span>
+          <strong><?= get_option('contact') ?></strong>
+        </span>
+      </div>
       <h2 class="uk-text-center">SUPPORT BY :</h2>
       <ul class=support>
         <?php
-          $query = new WP_Query( array('post_type' => 'supports') );
-          while ( $query->have_posts() ) : $query->the_post();
-            if (has_post_thumbnail()):
-        ?>
+        $query = new WP_Query( array('post_type' => 'supports') );
+        while ( $query->have_posts() ) : $query->the_post();
+        if (has_post_thumbnail()):
+          ?>
           <li><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" alt="<?= the_title() ?>"></li>
-        <?php
-            endif;
-          endwhile;
-        ?>
-      </ul>
-    </div>
-  </section>
-  <section class="footer-bottom">
-    <div class="uk-container">
-      <p>&copy 2018 - underdogsmovement | suarsuara</p>
-    </div>
-  </section>
+          <?php
+        endif;
+      endwhile;
+      ?>
+    </ul>
+  </div>
+</section>
+<section class="footer-bottom">
+  <div class="uk-container">
+    <p>&copy 2018 - underdogsmovement | suarsuara</p>
+  </div>
+</section>
 </footer>
-
-
 
 <div id="search" class="uk-modal-full uk-modal" uk-modal>
   <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
