@@ -11,12 +11,16 @@
       </ul>
       <h2 class="uk-text-center">SUPPORT BY :</h2>
       <ul class=support>
-        <li><img src="<?= get_img('sembilan.png', 'support') ?>" alt="Sembilan"></li>
-        <li><img src="<?= get_img('vistud.png', 'support') ?>" alt="Vision Studio"></li>
-        <li><img src="<?= get_img('rollingstone.png', 'support') ?>" alt="Rolling Stone"></li>
-        <li><img src="<?= get_img('youtube.png', 'support') ?>" alt="Youtube"></li>
-        <li><img src="<?= get_img('fb.png', 'support') ?>" alt="Facebook"></li>
-        <li><img src="<?= get_img('twitter.png', 'support') ?>" alt="Twitter"></li>
+        <?php
+          $query = new WP_Query( array('post_type' => 'supports') );
+          while ( $query->have_posts() ) : $query->the_post();
+            if (has_post_thumbnail()):
+        ?>
+          <li><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" alt="<?= the_title() ?>"></li>
+        <?php
+            endif;
+          endwhile;
+        ?>
       </ul>
     </div>
   </section>

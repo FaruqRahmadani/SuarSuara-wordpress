@@ -42,6 +42,7 @@ if (is_admin()) {
 include('functions/slider.php');
 include('functions/events.php');
 include('functions/bands.php');
+include('functions/supports.php');
 
 add_action( 'admin_menu', 'custom_post_menu' );
 function custom_post_menu() {
