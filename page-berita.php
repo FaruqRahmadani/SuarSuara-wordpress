@@ -8,7 +8,7 @@ get_header();
       <div class="uk-width-2-3@m">
         <h1 class="main-title">NEWS</h1>
         <?php
-          $query = new WP_Query( array('post_type' => 'any') );
+          $query = new WP_Query( array('post_type' => array('post', 'events', 'bands')) );
           while ( $query->have_posts() ) : $query->the_post();
         ?>
             <article>
