@@ -22,7 +22,7 @@
             <p><?= nl2br(get_post_meta($postId, 'band_description', true)) ?></p>
           </div>
           <div class="box-info">
-            <h3>CONCTACT</h3>
+            <h3>CONTACT</h3>
             <span class="phone">
               <p>
                 <?= nl2br(get_post_meta($postId, 'band_contact', true)) ?>
