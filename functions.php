@@ -19,6 +19,8 @@ if (is_admin()) {
       ['id' => 'url_twitter', 'title' => 'URL Twitter Akun'],
       ['id' => 'url_youtube', 'title' => 'URL Youtube Akun'],
       ['id' => 'url_highlight_youtube', 'title' => 'URL Highlight Youtube'],
+      ['id' => 'title_highlight_youtube', 'title' => 'Title Highlight Youtube'],
+      ['id' => 'desc_highlight_youtube', 'title' => 'Description Highlight Youtube'],
       ['id' => 'contact', 'title' => 'Contact']
     ];
 
