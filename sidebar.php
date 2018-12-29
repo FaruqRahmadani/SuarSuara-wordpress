@@ -4,7 +4,7 @@
     <h3 class="uk-margin-small-bottom"><?= get_option('title_highlight_youtube') ?></h3>
   </span>
   <span class="highlight-description">
-    <p><?= get_option('desc_highlight_youtube') ?></p>
+    <p><?= nl2br(get_option('desc_highlight_youtube')) ?></p>
   </span>
   <div class="videowrapper">
     <iframe width="auto" height="100%" allowfullscreen
