@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <div class="uk-container">
   <div class="uk-position-relative uk-visible-toggle uk-margin-medium-top" uk-slideshow="autoplay:true; ratio: 5:2; animation: fade">
-    <ul class="uk-slideshow-items" style="min-height: 600px">
+    <ul class="uk-slideshow-items custom-slideshow">
       <?php
         $query = new WP_Query( array('post_type' => 'slider') );
         while ( $query->have_posts() ) : $query->the_post();
