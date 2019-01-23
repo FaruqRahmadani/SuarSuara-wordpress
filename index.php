@@ -1,6 +1,6 @@
 <?php get_header() ?>
 <div class="uk-container">
-  <div class="uk-position-relative uk-visible-toggle uk-margin-medium-top" uk-slideshow="min-height: 600; autoplay:true; ratio: 5:2; animation: fade">
+  <div class="uk-position-relative uk-visible-toggle uk-margin-medium-top" uk-slideshow="min-height: 600; autoplay:true; ratio: 7:3; animation: fade">
     <ul class="uk-slideshow-items">
       <?php
         $query = new WP_Query( array('post_type' => 'slider') );
