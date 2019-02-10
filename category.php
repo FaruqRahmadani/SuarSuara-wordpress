@@ -20,7 +20,7 @@
                     <div class="post-category"><?= $category->cat_name ?></div>
                   <?php endforeach; ?>
                   <p class="uk-margin-remove-vertical"><?= get_the_excerpt() ?></p>
-                  <a class="read-more" href="<?= get_the_permalink() ?>">Read more...</a>
+                  <a class="read-more" href="<?= get_the_permalink() ?>">Selengkapnya...</a>
                 </div>
               </div>
             </article>
