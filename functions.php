@@ -5,6 +5,22 @@ function load_theme(){
 }
 add_action( 'wp_enqueue_scripts', 'load_theme' );
 add_theme_support( 'post-thumbnails' );
+register_nav_menus(array(
+  'menu'   => 'Menu',
+));
+
+function showMenu(){
+  $args = array(
+    'theme_location'  => 'menu',
+    'container'       => false,
+    'items_wrap' => '%3$s',
+  );
+  if ( has_nav_menu( 'menu' ) ) :
+    wp_nav_menu($args);
+  else:
+    echo '<li><a href="'.get_home_url().'">BERANDA</a></li>';
+  endif;
+}
 
 function get_img($filename, $dir=null){
   if ($dir) $dir = $dir.'/';

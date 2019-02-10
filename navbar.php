@@ -7,11 +7,7 @@
       <div class="uk-navbar-right">
         <div class="main-menu">
           <ul class="uk-navbar-nav">
-            <li><a href="<?= get_home_url() ?>">BERANDA</a></li>
-            <li><a href="<?= get_category_link(get_cat_ID('Band')) ?>">STORE</a></li>
-            <?php wp_list_pages( array(
-              'title_li'    => '',
-            ) ) ?>
+            <?php showMenu() ?>
             <li><a class="uk-navbar-toggle uk-float-right uk-padding-small" href="#search" uk-search-icon uk-toggle></a></li>
           </ul>
         </div>
