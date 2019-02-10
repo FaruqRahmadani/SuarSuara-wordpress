@@ -11,19 +11,6 @@
     src="<?= get_option('url_highlight_youtube') ?>" class="video"></iframe>
   </div>
   <div class="widget">
-    <h1 class="main-title">CATEGORY</h1>
-    <ul class="uk-list">
-      <?php
-      $categories = get_categories();
-      foreach($categories as $category) :
-        ?>
-        <li><a class="category" href="<?= get_category_link( $category->term_id ) ?>"><?= $category->name ?></a></li>
-        <?php
-      endforeach;
-      ?>
-    </ul>
-  </div>
-  <div class="widget">
     <h1 class="main-title">EVENTS</h1>
     <section id="events">
       <?php
