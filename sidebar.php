@@ -37,5 +37,6 @@
     endwhile;
     ?>
   </section>
+  <a class="read-more" href="<?= get_category_link( get_cat_ID( 'event' ) ) ?>">Selengkapnya...</a>
 </div>
 </div>
