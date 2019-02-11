@@ -4,7 +4,7 @@
     <h1 class="main-title">PRODUCT</h1>
     <div class="uk-grid">
       <?php
-      $query = new WP_Query( array('post_type' => 'bands') );
+      $query = new WP_Query( array('post_type' => 'lapak') );
       while ( $query->have_posts() ) : $query->the_post();
       ?>
       <div class="uk-width-1 uk-width-1-2@s uk-width-1-3@m uk-width-1-4@l">
