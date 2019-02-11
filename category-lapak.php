@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <div class="uk-container">
   <section id="content">
-    <h1 class="main-title">PRODUCT</h1>
+    <h1 class="main-title">LAPAK</h1>
     <div class="uk-grid">
       <?php
       $query = new WP_Query( array('post_type' => 'lapak') );
