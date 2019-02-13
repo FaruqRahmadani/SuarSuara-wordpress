@@ -49,11 +49,7 @@
   <div class="uk-offcanvas-bar">
     <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
     <ul class="uk-list uk-list-divider">
-      <li><a href="<?= get_home_url() ?>">BERANDA</a></li>
-      <li><a href="<?= get_category_link(get_cat_ID('Band')) ?>">STORE</a></li>
-      <?php wp_list_pages( array(
-        'title_li'    => '',
-      ) ) ?>
+      <?php showMenu() ?>
       <li>
         <form class="uk-search uk-search-default"  id="search" action="<?= home_url( '/' ) ?>" method="get">
           <a href="" class="uk-search-icon-flip" uk-search-icon></a>
