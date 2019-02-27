@@ -3,8 +3,9 @@
   <section id="content">
     <div uk-grid>
       <div class="uk-width-2-3@m">
-        <h1 class="main-title"><?= the_title() ?></h1>
+        <h1 class="main-title">NEWS</h1>
         <article>
+          <h2 class="article-title"><?= the_title() ?></h2>
           <div class="post-date"><?= get_the_date() ?></div>
           <?php foreach (get_the_category() as $category): ?>
             <div class="post-category"><?= $category->cat_name ?></div>
