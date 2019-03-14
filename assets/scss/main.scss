@@ -16,18 +16,22 @@
 
 // font setting
 @font-face {
-    font-family: 'Roboto Condensed';
-    src: url('../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
 }
 
 @font-face {
-    font-family: 'Oswald';
-    src: url('../fonts/Oswald/Oswald-Regular.ttf');
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald/Oswald-Regular.ttf');
 }
 
 .uk-slideshow-nav {
   position: relative;
   bottom: 30px;
+}
+
+em {
+  color: inherit !important;
 }
 
 /* this was trigger on and off during offcanvas animation */
@@ -36,17 +40,26 @@
 /* i just add this to my css to support the transform CSS effect */
 .uk-offcanvas-bar { transition: all 300ms ease-out; }
 
-// * {
-//   font-family: "Oswald", Helvetica, Arial, sans-serif !important;
-//   font-weight: 400;
-//   letter-spacing: .5px;
-// }
+.uk-logo {
+  max-width: 180px !important;
+  position: absolute !important;
+}
 
-article p, article span, a.read-more, .brand-info p {
+.btn-show {
+  margin-top: 10px;
+  float: right;
+
+}
+
+p, article p, article span, a.read-more, .brand-info p, .post-category, .post-date, .btn-show {
   font-family: "Roboto Condensed" !important;
 }
 
-nav a, .article-title, .main-title, a.category, .list-events, h4, .footer-top h2, .post-date, .frame span{
+.contact, #menuresv, nav a, h1, h2, h3,
+.article-title, .main-title,
+a.category, .list-events, h4,
+.footer-top h2,
+.frame span {
   font-family: "Oswald" !important;
 }
 
@@ -57,11 +70,11 @@ body { padding-top: 60px;}
 }
 
 .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #content {
@@ -69,6 +82,7 @@ body { padding-top: 60px;}
 }
 
 .main-title {
+  text-transform: uppercase;
   font-size: 2.3em;
   letter-spacing: 2px;
   font-weight: 200 !important;
@@ -77,35 +91,49 @@ body { padding-top: 60px;}
   padding-left: 15px;
 }
 
+span.highlight-title {
+  h3 {
+    font-style: italic;
+    font-size: 1.2em !important;
+  }
+}
+
+span.highlight-description {
+  p {
+    line-height: 20px !important;
+    font-style: italic;
+  }
+}
+
 .widget {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 a.category {
   text-transform: uppercase;
-	@include transition-duration(.9s);
-	text-align: center;
-	display: block;
-	margin-bottom: 5px !important;
-	padding: 5px ;
-	background: $color-yellow;
-	color: $color-dark-grey !important;
+  @include transition-duration(.9s);
+  text-align: center;
+  display: block;
+  margin-bottom: 5px !important;
+  padding: 5px ;
+  background: $color-yellow;
+  color: $color-dark-grey !important;
 
-	&:hover {
-		background: darken($color-yellow,50%) !important;
-		color: #fff !important;
-	}
+  &:hover {
+    background: darken($color-yellow,50%) !important;
+    color: #fff !important;
+  }
 }
 
 .uk-search-default {
-	margin-top: 30px;
-	width : 100% !important;
+  margin-top: 30px;
+  width : 100% !important;
 }
 
 .videowrapper {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin-bottom: 50px;
 }

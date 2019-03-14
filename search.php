@@ -13,8 +13,11 @@
               <div class="uk-width-2-3@m">
                 <h2 class="article-title uk-margin-remove-bottom"><a href="<?= get_the_permalink() ?>"><?= the_title() ?></a></h2>
                 <div class="post-date"><?= get_the_date() ?></div>
+                <?php foreach (get_the_category() as $category): ?>
+                  <div class="post-category"><?= $category->cat_name ?></div>
+                <?php endforeach; ?>
                 <p class="uk-margin-remove-vertical"><?= get_the_excerpt() ?></p>
-                <a class="read-more" href="<?= get_the_permalink() ?>">read more...</a>
+                <a class="read-more" href="<?= get_the_permalink() ?>">Selengkapnya...</a>
               </div>
             </div>
           </article>
