@@ -17,7 +17,7 @@
               <h3>MAIL</h3>
               <p>suarsuara.id@gmail.com</p>
 
-              <h3>SOCIAL MEDIA</h3>   
+              <h3>TELEPHONE</h3>   
               <p><?= get_option('contact') ?></p>
               
                
