@@ -11,21 +11,25 @@
                 <li><a class="socmed-bottom" href="<?= get_option('url_twitter') ?>"><img data-src="<?= get_img('tw.svg', 'socmed') ?>" alt="facebook" uk-img></a></li>
                 <li><a class="socmed-bottom" href="<?= get_option('url_ig') ?>"><img data-src="<?= get_img('ig.svg', 'socmed') ?>" alt="facebook" uk-img></a></li>
                 <li><a class="socmed-bottom" href="<?= get_option('url_youtube') ?>"><img data-src="<?= get_img('yt.svg', 'socmed') ?>" alt="facebook" uk-img></a></li>
-              </ul>         
+              </ul>   
 
-              <span>
-                <strong><?= get_option('contact') ?></strong>
-              </span>
+
+              <h3>MAIL</h3>
+              <p>suarsuara.id@gmail.com</p>
+
+              <h3>SOCIAL MEDIA</h3>   
+              <p><?= get_option('contact') ?></p>
+              
                
             </div>
           </div>
         </div>
-        
+
         <div class="uk-width-1-2@m">
           <div class="footer-right uk-text-center">
             <div id="support">
               <h2 class="uk-text-center">SUPPORT BY :</h2>
-              <ul class=support>
+              <ul class=list-support>
                 <?php
                   $query = new WP_Query( array('post_type' => 'supports') );
                   while ( $query->have_posts() ) : $query->the_post();
@@ -37,7 +41,7 @@
                   endwhile;
                 ?>
               </ul>
-            </div>    
+            </div>
           </div>
         </div>
       </div>
